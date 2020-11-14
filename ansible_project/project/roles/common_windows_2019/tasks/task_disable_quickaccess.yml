@@ -1,7 +1,7 @@
 ---
 - name: Open File Explorer to The PC
   win_regedit:
-    path: HKCR:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+    path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
     name: LaunchTo
     data: 1
     type: dword
