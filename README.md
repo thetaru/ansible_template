@@ -126,3 +126,11 @@ ansible_port=5986
 ansible_winrm_server_cert_validation=ignore
 ...
 ```
+```
+### Windowsの場合のみ編集
+### 
+# vi group_vars/<>.yml
+```
+```
+###
+```
