@@ -25,7 +25,7 @@ http://tdoc.info/blog/2014/05/30/ansible_target_switching.html
 Setting.shの`SSH_PASS`と`Ansible_PASS`はプロジェクトによって変更すること。
 ```
 ### 管理対象サーバ上でSetting.shを実行
-### 注) ansible実行ユーザ:ansibleを変える場合はansible.cfgのremote_userの値も変更すること
+### 注) ansible実行ユーザ(Ansible_USER=ansible)を変える場合はansible.cfgのremote_userの値も変更すること
 # sh Setting.sh
 ```
 ## ■ 実行方法
