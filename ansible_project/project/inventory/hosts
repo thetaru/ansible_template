@@ -45,8 +45,15 @@ ansible_sudo_pass=fuga
 
 # For Windows Server 2019
 [WindowsServer2019:vars]
+### ログインユーザの設定
 ansible_user=Administrator
 ansible_password=Password0
 ansible_connection=winrm
 ansible_port=5986
 ansible_winrm_server_cert_validation=ignore
+
+### 昇格時に使用するユーザの指定
+ansible_become=yes
+ansible_become_method=runas
+ansible_become_user=Administrator
+ansible_become_password=Password0
