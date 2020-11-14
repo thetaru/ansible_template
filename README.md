@@ -39,4 +39,5 @@ BECOME password: <ansible password>
 1. inventory/hostsを編集する
 2. 追加したグループ名と同名のグループ変数ファイルをgroup_vars下に作成する
 3. 追加したグループ名と同名のplaybookファイルをplaybooks下に作成する
+4. LinuxならLinux-Setting.sh, WindowsならWin-Setting.ps1を実行する
 ```
