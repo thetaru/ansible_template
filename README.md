@@ -43,21 +43,34 @@ BECOME password: <ansible password>
 ```
 # パスワード暗号化について
 http://jimaoka.hatenablog.jp/entry/ansible-vault
+このテンプレートではパスワードの暗号化を施していないので暗号化の方法を以下に記す。
 ```
-### なければ新規作成
+### プロジェクト直下にいることを確認する
+# pwd
+```
+```
+/root/project
+```
+```
+### 復号用のパスワードを記載するファイルを作成
+# mkdir group_vars/passwd
+# touch group_vars/passwd/.vaultpass
+# chmod 600 group_vars/passwd/.vaultpass
+```
+```
+### 復号用のパスワードを記入
+# echo "Password" > group_vars/passwd/.vaultpass
+```
+```
+### 暗号化する変数を記載するファイルを作成
 # vi group_vars/passwd/passwd.yml
 ```
 ```
-### 例としてansible_sudo_passを暗号化してみる
+### 例としてansible_sudo_passを暗号化する
 +  ansible_sudo_pass: fuga
 +  ansible_password: Password0
 ...
 ```
 ```
-# ansible-vault encrypt group_vars/passwd/passwd.yml
-```
-```
-New Vault password: <入力>
-Confirm New Vault password: <入力>
-Encryption successful
+# ansible-vault encrypt group_vars/passwd/passwd.yml --vault-password-file=group_vars/passwd/.vaultpass
 ```
