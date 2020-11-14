@@ -64,10 +64,10 @@ BECOME password: <ansible password>
 ```
 ```
 ### 暗号化する変数を記載するファイルを作成
+### 例としてansible_sudo_passなどを暗号化する
 # vi group_vars/passwd/passwd.yml
 ```
 ```
-### 例としてansible_sudo_passを暗号化する
 +  ansible_sudo_pass: fuga
 +  ansible_password: Password0
 ...
