@@ -1,8 +1,4 @@
 ---
-### Ansible実行ユーザの指定
-ansilbe_user: Administrator
-ansible_password: Password0
-
 ### 昇格時に使用するユーザの指定
 ansible_become: yes
 ansible_become_method: runas
