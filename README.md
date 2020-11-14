@@ -102,15 +102,16 @@ Encryption successful
     - role: common_windows_2019
 ```
 ```
-### 
+### 暗号化した変数を使用する
 # vi inventory/hosts
 ```
 ```
+# For RHEL8
 [RHEL8:vars]
 ansible_user=ansible
 ansible_sudo_pass="{{ ansible_sudo_pass }}"
 
-# For Windows Server
+# For Windows Server 2019
 [Windows:vars]
 ansible_user=Administrator
 ansible_password="{{ ansible_password }}"
