@@ -19,6 +19,7 @@ http://tdoc.info/blog/2014/05/30/ansible_target_switching.html
 ## ■ 外部モジュールのインストール
 ```
 # ansible-galaxy collection install ansible.windows
+# pip3 install pywinrm
 ```
 ## ■ 事前準備
 Setting.shの`SSH_PASS`と`Ansible_PASS`はプロジェクトによって変更すること。
