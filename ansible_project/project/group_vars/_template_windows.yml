@@ -1,10 +1,4 @@
 ---
-### 昇格時に使用するユーザの指定
-ansible_become: yes
-ansible_become_method: runas
-ansible_become_user: Administrator
-ansible_become_password: Password0
-
 ### administrators
 USERS:
   - name: test_user1
