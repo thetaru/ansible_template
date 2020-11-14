@@ -94,7 +94,7 @@ Encryption successful
 ```
 ### playbooks内の各playbookよりpasswd.ymlを変数として読み込む
 ### 以下を参考にしてください
-# vi playbooks/<playbook_name>.yml
+# vi playbooks/BACKUP_SERVER.yml
 ```
 ```yml
 ---
@@ -110,6 +110,7 @@ Encryption successful
 # vi inventory/hosts
 ```
 ```
+...
 # For RHEL8
 [RHEL8:vars]
 ansible_user=ansible
@@ -122,4 +123,5 @@ ansible_password="{{ ansible_password }}"
 ansible_connection=winrm
 ansible_port=5986
 ansible_winrm_server_cert_validation=ignore
+...
 ```
