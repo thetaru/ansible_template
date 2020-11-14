@@ -101,3 +101,20 @@ Encryption successful
   roles:
     - role: common_windows_2019
 ```
+```
+### 
+# vi inventory/hosts
+```
+```
+[RHEL8:vars]
+ansible_user=ansible
+ansible_sudo_pass="{{ ansible_sudo_pass_a | password_hash('sha512') }}"
+
+# For Windows Server
+[Windows:vars]
+ansible_user=Administrator
+ansible_password="{{ ansible_password_a | password_hash('sha512') }}"
+ansible_connection=winrm
+ansible_port=5986
+ansible_winrm_server_cert_validation=ignore
+```
