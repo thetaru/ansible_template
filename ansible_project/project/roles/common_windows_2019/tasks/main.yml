@@ -1,0 +1,18 @@
+---
+- import_tasks: ./task_change_hostname.yml
+- import_tasks: ./task_disable_ServerManager.yml
+- import_tasks: ./task_set_remote-desktop.yml
+- import_tasks: ./task_disable_device-installation-settings.yml
+- import_tasks: ./task_disable_autoplay.yml
+- import_tasks: ./task_set_eventvwr.yml
+- import_tasks: ./task_disable_quickaccess.yml
+- import_tasks: ./task_set_memory-dump.yml
+- import_tasks: ./task_set_pagefile.yml
+- import_tasks: ./task_set_userinfo.yml
+- import_tasks: ./task_disable_feedback.yml
+- import_tasks: ./task_disable_UAC.yml
+- import_tasks: ./task_disable_Windows-Update.yml
+- import_tasks: ./task_enable_ShowMenus.yml
+- import_tasks: ./task_disable_HideFileExt.yml
+- import_tasks: ./task_enable_two-sessions.yml
+- import_tasks: ./task_disable_services.yml

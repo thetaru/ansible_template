@@ -1,0 +1,24 @@
+---
+- name: Disable unnecesarily services
+  win_service:
+    name: "{{ item.name }}"
+    start_mode: "{{ item.start_mode }}"
+    state: "{{ item.state }}"
+  loop:
+    - {name: bthserv, start_mode: disabled, state: stopped}
+    - {name: CertPropSvc, start_mode: disabled, state: stopped}
+    - {name: dmwappushservice, start_mode: disabled, state: stopped}
+    - {name: MapsBroker, start_mode: disabled, state: stopped}
+    - {name: lfsvc, start_mode: disabled, state: stopped}
+    - {name: Spooler, start_mode: disabled, state: stopped}
+    - {name: PrintNotify, start_mode: disabled, state: stopped}
+    - {name: SensorDataService, start_mode: disabled, state: stopped}
+    - {name: SensrSvc, start_mode: disabled, state: stopped}
+    - {name: SensorService, start_mode: disabled, state: stopped}
+    - {name: ShellHWDetection	, start_mode: disabled, state: stopped}
+    - {name: ScDeviceEnum, start_mode: disabled, state: stopped}
+    - {name: WalletService, start_mode: disabled, state: stopped}
+    - {name: stisvc, start_mode: disabled, state: stopped}
+    - {name: wisvc, start_mode: disabled, state: stopped}
+    - {name: icssvc, start_mode: disabled, state: stopped}
+    - {name: RmSvc, start_mode: disabled, state: stopped}

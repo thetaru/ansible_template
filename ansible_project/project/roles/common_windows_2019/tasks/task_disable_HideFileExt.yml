@@ -1,0 +1,7 @@
+---
+- name: Hide extensions for known file types
+  win_regedit:
+    path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+    name: HideFileExt
+    data: 0
+    type: dword

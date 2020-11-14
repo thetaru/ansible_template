@@ -1,0 +1,38 @@
+##############################################################################
+#
+# GROUPS
+#
+# [GROUP_NAME]
+# # OS: OS_TYPE
+# HOSTNAME ansible_host=IPADDR
+#
+##############################################################################
+
+[PROXY_SERVER]
+# OS: RHEL8
+ansible-test1 ansible_host=192.168.137.80
+
+[NTP_SERVER]
+# OS: RHEL8
+ansible-test2 ansible_host=192.168.137.81
+
+[ZABBIX_SERVER]
+# OS: RHEL8
+ansible-test3 ansible_host=192.168.137.82
+
+[BACKUP_SERVER]
+# OS: Windows Server 2019
+ansible-test4 ansible_host=192.168.137.11
+
+##############################################################################
+#
+# VARIABLES
+#
+##############################################################################
+
+[BACKUP_SERVER:vars]
+ansible_user=Administrator
+ansible_password=Password0
+ansible_connection=winrm
+ansible_port=5986
+ansible_winrm_server_cert_validation=ignore

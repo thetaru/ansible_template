@@ -1,0 +1,9 @@
+---
+- name: Disable SELinux
+  selinux:
+    state: disabled
+  register: result
+
+- name: Reboot
+  reboot:
+  when: result.reboot_required

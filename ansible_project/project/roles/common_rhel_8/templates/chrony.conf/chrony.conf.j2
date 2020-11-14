@@ -1,0 +1,51 @@
+# Use public servers from the pool.ntp.org project.
+# Please consider joining the pool (httpwww.pool.ntp.orgjoin.html).
+#pool 2.centos.pool.ntp.org iburst
+{% for NTP_SERVER in NTP_SERVERS %}
+{% if NTP_SERVER != None %}
+server {{ NTP_SERVER }}
+{% endif %}
+{% endfor %}
+
+# Record the rate at which the system clock gainslosses time.
+driftfile varlibchronydrift
+
+# Allow the system clock to be stepped in the first three updates
+# if its offset is larger than 1 second.
+#makestep 1.0 3
+leapsecmode slew
+
+maxslewrate 1000
+
+# Enable kernel synchronization of the real-time clock (RTC).
+rtcsync
+
+# Enable hardware timestamping on all interfaces that support it.
+#hwtimestamp 
+
+# Increase the minimum number of selectable sources required to adjust
+# the system clock.
+#minsources 2
+
+# Allow NTP client access from local network.
+#allow 192.168.0.0/16
+{% for ALLOW_NTP_NETWORK in ALLOW_NTP_NETWORKS %}
+{% if ALLOW_NTP_NETWORK != None %}
+allow {{ ALLOW_NTP_NETWORK }}
+{% endif %}
+{% endfor %}
+
+# Serve time even if not synchronized to a time source.
+#local stratum 10
+
+# Specify file containing keys for NTP authentication.
+keyfile etcchrony.keys
+
+# Get TAI-UTC offset and leap seconds from the system tz database.
+leapsectz rightUTC
+
+# Specify directory for log files.
+logdir varlogchrony
+
+# Select which information is logged.
+#log measurements statistics tracking

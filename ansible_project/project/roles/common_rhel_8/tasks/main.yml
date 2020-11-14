@@ -1,0 +1,12 @@
+---
+- import_tasks: ./task_create_user.yml
+- import_tasks: ./task_disable_selinux.yml
+- import_tasks: ./task_change_hostname.yml
+- import_tasks: ./task_disable_ipv6.yml
+- import_tasks: ./task_set_resolver.yml
+- import_tasks: ./task_set_chrony.yml
+- import_tasks: ./task_set_journald.yml
+- import_tasks: ./task_set_coredump.yml
+- import_tasks: ./task_restrict_su.yml
+- import_tasks: ./task_disable_services.yml
+- import_tasks: ./task_set_OOM-Killer-behavior.yml

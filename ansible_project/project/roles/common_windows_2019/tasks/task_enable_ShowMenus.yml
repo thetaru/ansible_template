@@ -1,0 +1,7 @@
+---
+- name: Enable Always Show Menus
+  win_regedit:
+    path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+    name: AlwaysShowMenus
+    data: 1
+    type: dword

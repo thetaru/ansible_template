@@ -1,0 +1,23 @@
+---
+- name: Set Memory dump setting
+  win_regedit:
+    path: HKLM:\System\CurrentControlSet\Control\CrashControl
+    name: CrashDumpEnabled
+    data: "{{ DUMP.TYPE }}"
+    type: dword
+
+- name: Set Memory dump setting
+  win_regedit:
+    path: HKLM:\System\CurrentControlSet\Control\CrashControl
+    name: DumpFile
+    data: "{{ DUMP.DUMP_FILE }}"
+    type: expandstring
+  when: DUMP.TYPE != 3
+
+- name: Set Memory dump setting <Small memory dump>
+  win_regedit:
+    path: HKLM:\System\CurrentControlSet\Control\CrashControl
+    name: MinidumpDir
+    data: "{{ DUMP.MINI_DUMP_DIR }}"
+    type: expandstring
+  when: DUMP.TYPE == 3

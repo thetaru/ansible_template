@@ -1,0 +1,17 @@
+---
+- name: Disable Send feedback to Microsoft
+  win_regedit:
+    path: HKCU:\SOFTWARE\Microsoft\Siuf\Rules
+    name: "{{ item.name }}"
+    data: "{{ item.value }}"
+    type: dword
+  loop: "{{ FEEDBACK_FREQUENCY }}"
+  when: item.value != 'Delete'
+
+- name: Disable Send feedback to Microsoft
+  win_regedit:
+    path: HKCU:\SOFTWARE\Microsoft\Siuf\Rules
+    name: "{{ item.name }}"
+    state: absent
+  loop: "{{ FEEDBACK_FREQUENCY }}"
+  when: item.value == 'Delete'

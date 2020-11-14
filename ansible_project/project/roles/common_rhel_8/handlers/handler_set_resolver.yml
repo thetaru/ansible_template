@@ -1,0 +1,6 @@
+---
+- name: reload NetworkManager
+  systemd:
+    name: NetworkManager.service
+    state: reloaded
+    enabled: yes

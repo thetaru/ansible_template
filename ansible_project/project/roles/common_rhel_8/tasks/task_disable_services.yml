@@ -1,0 +1,9 @@
+---
+- name: Disable unnecessary services
+  systemd:
+    name: "{{ item }}"
+    state: stopped
+    enabled: no
+  loop:
+    - tuned.service
+    - vdo.service  

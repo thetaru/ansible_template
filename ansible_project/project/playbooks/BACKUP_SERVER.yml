@@ -1,0 +1,6 @@
+---
+- hosts: BACKUP_SERVER
+  vars_files:
+    - ../group_vars/BACKUP_SERVER.yml
+  roles:
+    - role: common_windows_2019

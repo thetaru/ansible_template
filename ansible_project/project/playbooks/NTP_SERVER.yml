@@ -1,0 +1,6 @@
+---
+- hosts: NTP_SERVER
+  vars_files:
+    - ../group_vars/NTP_SERVER.yml
+  roles:
+    - role: common_rhel_8

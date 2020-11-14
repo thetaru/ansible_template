@@ -1,0 +1,23 @@
+---
+- name: Set resolver setting
+  ini_file:
+    path: /etc/NetworkManager/NetworkManager.conf
+    state: present
+    section: main
+    option: dns
+    value: none
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+  notify:
+    - reload NetworkManager
+
+- name: Deploy resolv.conf template
+  template:
+    src: ../templates/resolv.conf/resolv.conf.j2
+    dest: /etc/resolv.conf
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes

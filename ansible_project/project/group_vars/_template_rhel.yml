@@ -1,0 +1,23 @@
+---
+### WHEEL USERS
+USERS:
+  - name: test_user1
+    password: test1
+  - name: test_user2
+    password: test2
+      
+
+DOMAINS:
+  ### 少なくとも1つは値をいれること(仮にNoneであっても)
+  ### NoneはJinja2側で対処すること
+  - example.com
+
+DNS_SERVERS:
+  - 8.8.8.8
+
+NTP_SERVERS:
+  - ntp.nict.jp
+
+### NTP SERVER ONLY
+ALLOW_NTP_NETWORKS:
+  - 192.168.137.0/24

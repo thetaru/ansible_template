@@ -1,0 +1,19 @@
+---
+- name: Set Event log size
+  win_eventlog:
+    name: "{{ item.NAME }}"
+    maximum_size: "{{ item.MAXSIZE }}"
+    overflow_action: "{{ item.OVERFLOW_ACTION }}"
+    state: present
+  loop: "{{ EVENTVWRS }}"
+  when: item.OVERFLOW_ACTION != 'OverwriteOlder'
+
+- name: Set Event log size
+  win_eventlog:
+    name: "{{ item.NAME }}"
+    maximum_size: "{{ item.MAXSIZE }}"
+    overflow_action: "{{ item.OVERFLOW_ACTION }}"
+    retention_days: "{{ item.RETENTION_DAYS }}"
+    state: present
+  loop: "{{ EVENTVWRS }}"
+  when: item.OVERFLOW_ACTION == 'OverwriteOlder' and item.RETENTION_DAYS is defined

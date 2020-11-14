@@ -1,0 +1,7 @@
+---
+- name: Disable Device Installation Settings
+  ansible.windows.win_regedit:
+    path: HKLM:\Software\Microsoft\Windows\CurrentVersion\Device Metadata
+    name: PreventDeviceMetadataFromNetwork
+    data: 1
+    type: dword

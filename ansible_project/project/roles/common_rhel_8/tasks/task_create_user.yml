@@ -1,0 +1,15 @@
+---
+- name: Make wheel group
+  group:
+    name: wheel
+    state: present
+
+- name: Create Users
+  user:
+    name: "{{ item.name }}"
+    createhome: yes
+    password: "{{ item.password | password_hash('sha512') }}"
+    update_password: on_create
+    groups: wheel
+    state: present
+  loop: "{{ USERS }}"

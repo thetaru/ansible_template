@@ -1,0 +1,7 @@
+---
+- name: Disable Autoplay
+  ansible.windows.win_regedit:
+    path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers
+    name: DisableAutoplay
+    data: 1
+    type: dword

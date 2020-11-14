@@ -1,0 +1,8 @@
+- name: Set C pagefile, override if exists
+  win_pagefile:
+    drive: C
+    automatic: "{{ PAGEFILE.AUTOMATIC }}"
+    initial_size: "{{ PAGEFILE.INITIAL_SIZE }}"
+    maximum_size: "{{ PAGEFILE.MAXIMUM_SIZE }}"
+    override: yes
+    state: present

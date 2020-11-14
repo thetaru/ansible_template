@@ -1,0 +1,110 @@
+---
+### Ansible実行ユーザの指定
+ansilbe_user: Administrator
+ansible_password: Password0
+
+### 昇格時に使用するユーザの指定
+ansible_become: yes
+ansible_become_method: runas
+ansible_become_user: Administrator
+ansible_become_password: Password0
+
+USERS:
+  - name: test_user1
+    password: test1
+  - name: test_user2
+    password: test2
+
+DOMAINS:
+  - 
+
+DNS_SERVERS:
+  1.1.1.1
+  8.8.8.8
+
+NTP_SERVERS:
+  - name: NtpServer
+    value: "ntp.nict.jp,0x8 pool.ntp.org,0x8"
+  - name: Type
+    value: NTP
+  - name: MinPollInterval
+    value: 0x6
+  - name: MaxPollInterval
+    value: 0xa
+
+### NTP SERVER ONLY
+ALLOW_NTP_NETWORKS:
+  - 
+
+### DoNotOverwrite   : 上書きしない
+### OverwriteAsNeeded: 必要に応じて上書きする
+### OverwriteOlder   : イベントを上書きしないでログをアーカイブする
+EVENTVWRS:
+  - NAME: Application
+    MAXSIZE: 20480KB
+    OVERFLOW_ACTION: OverwriteAsNeeded
+  - NAME: Security
+    MAXSIZE: 20480KB
+    OVERFLOW_ACTION: OverwriteAsNeeded
+  - NAME: System
+    MAXSIZE: 20480KB
+    OVERFLOW_ACTION: OverwriteAsNeeded
+
+PAGEFILE:
+  AUTOMATIC: yes
+  INITIAL_SIZE: 4096
+  MAXIMUM_SIZE: 4096
+
+### 0x0 = None
+### 0x1 = Complete memory dump
+### 0x2 = Kernel memory dump
+### 0x3 = Small memory dump (64KB)
+### 0x7 = Automatic memory dump
+DUMP:
+  TYPE: 1
+  DUMP_FILE: '%SystemRoot%\Memory.dmp'
+  MINI_DUMP_DIR: '%SystemRoot%\Minidump'
+
+### 使用者名
+RegisterdOwner: THETARU
+
+### 組織名
+RegisterdOrganization: THETARU
+
+### フィードバックの間隔
+### 自動(推奨): 
+### -> PeriodInNanoSeconds : Delete
+### -> NumberOfSIUFInPeriod: Delete
+### 常時      : 
+### -> PeriodInNanoSeconds : 100000000
+### -> NumberOfSIUFInPeriod: Delete
+### 1日1回    : 
+### -> PeriodInNanoSeconds : 864000000000
+### -> NumberOfSIUFInPeriod: 1
+### 週に1回   : 
+### -> PeriodInNanoSeconds : 6048000000000
+### -> NumberOfSIUFInPeriod: 1
+### 許可しない: 
+### -> PeriodInNanoSeconds : Delete
+### -> NumberOfSIUFInPeriod: 0
+FEEDBACK_FREQUENCY:  
+  - name: PeriodInNanoSeconds
+    value: Delete
+  - name: NumberOfSIUFInPeriod
+    value: 0
+
+### Disable UAC
+UAC:
+  - name: ConsentPromptBehaviorAdmin
+    value: 0
+  - name: EnableLUA
+    value: 0
+  - name: PromptOnSecureDesktop
+    value: 0
+
+### Disable Windows update
+WINDOWS_UPDATE:
+  - name: NoAutoUpdate
+    value: 1
+  - name: AUOptions
+    value: 1

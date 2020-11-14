@@ -1,0 +1,8 @@
+- name: Set a hostname
+  win_hostname:
+    name: "{{ inventory_hostname }}"
+  register: win_hostname
+
+- name: Reboot
+  win_reboot:
+  when: win_hostname.reboot_required

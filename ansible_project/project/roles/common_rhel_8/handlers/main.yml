@@ -1,0 +1,5 @@
+---
+- import_tasks: ./handler_set_chrony.yml
+- import_tasks: ./handler_set_resolver.yml
+- import_tasks: ./handler_set_journald.yml
+- import_tasks: ./handler_set_coredump.yml

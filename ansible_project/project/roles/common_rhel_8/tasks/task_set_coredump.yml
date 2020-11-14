@@ -1,0 +1,26 @@
+---
+- name: Set coredump setting
+  ini_file:
+    path: /etc/systemd/system.conf
+    state: present
+    section: Manager
+    no_extra_spaces: yes
+    option: "{{ item.option }}"
+    value: "{{ item.value }}"
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+  loop:
+    - { option: DumpCore, value: 'yes' }
+    - { option: DefaultLimitCORE, value: 'infinity' }
+  notify:
+    - daemon-reexec
+
+- name: Set coredump destination
+  sysctl:
+    name: "{{ item.name }}"
+    value: "{{ item.value }}"
+  loop:
+    - { name: 'kernel.core_pattern', value: '/var/tmp/core-%e.%p' }
+    - { name: 'fs.suid_dumpable', value: '2' }

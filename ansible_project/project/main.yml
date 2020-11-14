@@ -1,0 +1,5 @@
+---
+- import_playbook: ./playbooks/PROXY_SERVER.yml
+- import_playbook: ./playbooks/NTP_SERVER.yml
+- import_playbook: ./playbooks/ZABBIX_SERVER.yml
+- import_playbook: ./playbooks/BACKUP_SERVER.yml

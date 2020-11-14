@@ -1,0 +1,4 @@
+---
+- name: daemon-reexec
+  systemd:
+    daemon_reexec: yes

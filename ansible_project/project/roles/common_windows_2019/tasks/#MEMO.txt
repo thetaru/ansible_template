@@ -1,0 +1,9 @@
+task_disable_pagefiel.yml: 冪等性が保たれていない
+windows update今のままだと初回の更新すらできないので
+winupdate用のplaybook(taskか)を作る
+-> 1. いじったレジストリ(GPOの)戻す
+   2. windows update サービス起動
+   3. windows update開始(これが鬼門?再起動後にまだupdateあるかもなので)
+   4. win_up サービス停止 -> 無効化
+   5. (GPOの)レジストリでも無効化
+てな感じかな～

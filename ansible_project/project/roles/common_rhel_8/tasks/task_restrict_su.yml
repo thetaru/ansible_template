@@ -1,0 +1,8 @@
+---
+- name: Restrict the execution of su
+  lineinfile:
+    path: /etc/pam.d/su
+    state: present
+    backrefs: yes
+    regexp: '^#(auth\s*required\s*pam_wheel.so use_uid)$'
+    line: '\1'

@@ -1,0 +1,11 @@
+---
+- name: Deploy chrony.conf template
+  template:
+    src: ../templates/chrony.conf/chrony.conf.j2
+    dest: /etc/chrony.conf
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+  notify:
+    - restart chronyd

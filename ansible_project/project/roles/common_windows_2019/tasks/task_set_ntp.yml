@@ -1,0 +1,8 @@
+---
+- name: Set NTP Client
+  win_regedit:
+    path: HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Parameters
+    name: "{{ item.name}}"
+    data: "{{ item.value }}"
+    type: dword
+  loop: "{{ NTP_SERVERS }}"

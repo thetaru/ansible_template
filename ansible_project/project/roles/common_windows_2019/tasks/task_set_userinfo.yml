@@ -1,0 +1,14 @@
+---
+- name: Set Registerd Organization
+  win_regedit:
+    path: HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion
+    name: RegisterdOrganization
+    data: "{{ RegisterdOrganization }}"
+    type: expandstring
+
+- name: Set Registerd Owner
+  win_regedit:
+    path: HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion
+    name: DumpFile
+    data: "{{ RegisterdOwner }}"
+    type: expandstring

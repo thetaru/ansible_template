@@ -1,0 +1,9 @@
+---
+- name: Disable User Account Control(UAC)
+  win_regedit:
+    path: HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+    name: "{{ item.name }}"
+    data: "{{ item.value }}"
+    type: dword
+  loop: "{{ UAC }}"
+  
