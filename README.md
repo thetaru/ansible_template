@@ -72,7 +72,7 @@ BECOME password: <ansible password>
 +  ansible_password: Password0
 ...
 ```
-### 暗号化
+### 変数の暗号化
 ```
 ### 作成したパスワードをもとに変数を暗号化
 # ansible-vault encrypt group_vars/passwd/passwd.yml --vault-password-file=group_vars/passwd/.vaultpass
@@ -80,7 +80,7 @@ BECOME password: <ansible password>
 ```
 Encryption successful
 ```
-### [Option]
+### ansible.cfgの編集
 ```
 ### 復号用パスワードの場所をansible.cfgに記載
 # vi ansible.cfg
