@@ -44,4 +44,18 @@ BECOME password: <ansible password>
 # パスワード暗号化について
 http://jimaoka.hatenablog.jp/entry/ansible-vault
 ```
+# vi group_vars/passwd/passwd.yml
+```
+```
+### 例としてansible_sudo_passを暗号化してみる
++  ansible_sudo_pass: fuga
+...
+```
+```
+# ansible-vault encrypt group_vars/passwd/passwd.yml
+```
+```
+New Vault password: <入力>
+Confirm New Vault password: <入力>
+Encryption successful
 ```
