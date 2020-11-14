@@ -41,9 +41,9 @@ BECOME password: <ansible password>
 3. 追加したグループ名と同名のplaybookファイルをplaybooks下に作成する
 4. LinuxならLinux-Setting.sh, WindowsならWin-Setting.ps1を実行する
 ```
-# パスワード暗号化について
-http://jimaoka.hatenablog.jp/entry/ansible-vault
+## ■ パスワード暗号化について
 このテンプレートではパスワードの暗号化を施していないので暗号化の方法を以下に記す。
+### 事前確認
 ```
 ### プロジェクト直下にいることを確認する
 # pwd
@@ -51,6 +51,7 @@ http://jimaoka.hatenablog.jp/entry/ansible-vault
 ```
 /root/project
 ```
+### 事前準備
 ```
 ### 復号用のパスワードを記載するファイルを作成
 # mkdir group_vars/passwd
@@ -71,13 +72,15 @@ http://jimaoka.hatenablog.jp/entry/ansible-vault
 +  ansible_password: Password0
 ...
 ```
-```
 ### 暗号化
+```
+### 作成したパスワードをもとに変数を暗号化
 # ansible-vault encrypt group_vars/passwd/passwd.yml --vault-password-file=group_vars/passwd/.vaultpass
 ```
 ```
 Encryption successful
 ```
+### [Option]
 ```
 ### 復号用パスワードの場所をansible.cfgに記載
 # vi ansible.cfg
@@ -87,8 +90,9 @@ Encryption successful
 ...
 +  vault_password_file = ./group_vars/passwd/.vaultpass
 ```
+### 既存設定の変更
 ```
-### playbooks内の各playbookのvarから作成したpasswd.ymlを読み込むよう設定
+### playbooks内の各playbookよりpasswd.ymlを変数として読み込む
 ### 以下を参考にしてください
 # vi playbooks/<playbook_name>.yml
 ```
