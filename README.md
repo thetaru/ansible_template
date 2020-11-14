@@ -72,5 +72,32 @@ http://jimaoka.hatenablog.jp/entry/ansible-vault
 ...
 ```
 ```
+### 暗号化
 # ansible-vault encrypt group_vars/passwd/passwd.yml --vault-password-file=group_vars/passwd/.vaultpass
+```
+```
+Encryption successful
+```
+```
+### 復号用パスワードの場所をansible.cfgに記載
+# vi ansible.cfg
+```
+```
+[defaults]
+...
++  vault_password_file = ./group_vars/passwd/.vaultpass
+```
+```
+### playbooks内の各playbookのvarから作成したpasswd.ymlを読み込むよう設定
+### 以下を参考にしてください
+# vi playbooks/<playbook_name>.yml
+```
+```yml
+---
+- hosts: BACKUP_SERVER
+  vars_files:
++   - ../group_vars/passwd.yml
+    - ../group_vars/BACKUP_SERVER.yml
+  roles:
+    - role: common_windows_2019
 ```
