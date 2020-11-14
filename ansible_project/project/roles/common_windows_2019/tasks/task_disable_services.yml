@@ -5,6 +5,7 @@
     start_mode: "{{ item.start_mode }}"
     state: "{{ item.state }}"
   loop:
+    - {name: BTAGService, start_mode: disabled, state: stopped}
     - {name: bthserv, start_mode: disabled, state: stopped}
     - {name: CertPropSvc, start_mode: disabled, state: stopped}
     - {name: dmwappushservice, start_mode: disabled, state: stopped}
@@ -18,7 +19,10 @@
     - {name: ShellHWDetection	, start_mode: disabled, state: stopped}
     - {name: ScDeviceEnum, start_mode: disabled, state: stopped}
     - {name: WalletService, start_mode: disabled, state: stopped}
+    - {name: WbioSrvc, start_mode: disabled, state: stopped}
+    - {name: FrameServer, start_mode: disabled, state: stopped}
     - {name: stisvc, start_mode: disabled, state: stopped}
     - {name: wisvc, start_mode: disabled, state: stopped}
     - {name: icssvc, start_mode: disabled, state: stopped}
     - {name: RmSvc, start_mode: disabled, state: stopped}
+#    - {name: , start_mode: disabled, state: stopped}
