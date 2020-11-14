@@ -16,25 +16,25 @@
 ```
 # 必要そうな知識
 http://tdoc.info/blog/2014/05/30/ansible_target_switching.html
-# 外部モジュールのインストール
+## ■ 外部モジュールのインストール
 ```
 # ansible-galaxy collection install ansible.windows
 ```
-# 事前準備
+## ■ 事前準備
 Setting.shの`SSH_PASS`と`Ansible_PASS`はプロジェクトによって変更すること。
 ```
 ### 管理対象サーバ上でSetting.shを実行
 ### 注) ansible実行ユーザ:ansibleを変える場合はansible.cfgのremote_userの値も変更すること
 # sh Setting.sh
 ```
-# 実行方法
+## ■ 実行方法
 ```
 # ansible-playbook main.yml
 ```
 ```
 BECOME password: <ansible password>
 ```
-# 更新時のヒント
+## ■ サーバ追加時のヒント
 ```
 1. inventory/hostsを編集する
 2. 追加したグループ名と同名のグループ変数ファイルをgroup_vars下に作成する
