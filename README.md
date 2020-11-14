@@ -44,6 +44,7 @@ BECOME password: <ansible password>
 # パスワード暗号化について
 http://jimaoka.hatenablog.jp/entry/ansible-vault
 ```
+### なければ新規作成
 # vi group_vars/passwd/passwd.yml
 ```
 ```
