@@ -34,3 +34,9 @@ Setting.shの`SSH_PASS`と`Ansible_PASS`はプロジェクトによって変更�
 ```
 BECOME password: <ansible password>
 ```
+# 更新時のヒント
+```
+1. inventory/hostsを編集する
+2. 追加したグループ名と同名のグループ変数ファイルをgroup_vars下に作成する
+3. 追加したグループ名と同名のplaybookファイルをplaybooks下に作成する
+```
