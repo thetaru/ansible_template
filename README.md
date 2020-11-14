@@ -118,19 +118,16 @@ ansible_user=ansible
 ansible_sudo_pass="{{ ansible_sudo_pass }}"
 
 # For Windows Server 2019
-[Windows:vars]
+[WindowsServer2019:vars]
 ansible_user=Administrator
 ansible_password="{{ ansible_password }}"
 ansible_connection=winrm
 ansible_port=5986
 ansible_winrm_server_cert_validation=ignore
+
+ansible_become=yes
+ansible_become_method=runas
+ansible_become_user=Administrator
+ansible_become_password="{{ ansible_password }}"
 ...
-```
-```
-### Windowsの場合のみ編集
-### 
-# vi group_vars/<>.yml
-```
-```
-###
 ```
