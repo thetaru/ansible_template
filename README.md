@@ -40,7 +40,7 @@ BECOME password: <ansible password>
 1. inventory/hostsを編集する
 2. 追加したグループ名と同名のグループ変数ファイルをgroup_vars下に作成する
 3. 追加したグループ名と同名のplaybookファイルをplaybooks下に作成する
-4. LinuxならLinux-Setting.sh, WindowsならWin-Setting.ps1を実行する
+4. (すでに右をテンプレート元で実行しているなら不要)LinuxならLinux-Setting.sh, WindowsならWin-Setting.ps1を実行する
 ```
 ## ■ パスワード暗号化について
 このテンプレートではパスワードの暗号化を施していないので暗号化の方法を以下に記す。
