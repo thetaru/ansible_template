@@ -24,12 +24,12 @@ ansible-test3 ansible_host=192.168.137.82
 # OS: Windows Server 2019
 ansible-test4 ansible_host=192.168.137.11
 
-[Linux]
+[RHEL8]
 ansible-test1
 ansible-test2
 ansible-test3
 
-[Windows]
+[WindowsServer2019]
 ansible-test4
 
 ##############################################################################
@@ -38,8 +38,13 @@ ansible-test4
 #
 ##############################################################################
 
-# For Windows Server
-[Windows:vars]
+# For RHEL8 Server
+[RHEL8:vars]
+ansible_user=ansible
+ansible_sudo_pass=fuga
+
+# For Windows Server 2019
+[WindowsServer2019:vars]
 ansible_user=Administrator
 ansible_password=Password0
 ansible_connection=winrm
