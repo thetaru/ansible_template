@@ -50,6 +50,7 @@ http://jimaoka.hatenablog.jp/entry/ansible-vault
 ```
 ### 例としてansible_sudo_passを暗号化してみる
 +  ansible_sudo_pass: fuga
++  ansible_password: Password0
 ...
 ```
 ```
