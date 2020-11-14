@@ -1,9 +1,9 @@
 ---
 - name: Disable unnecessary services
   systemd:
-    name: "{{ item }}"
-    state: stopped
-    enabled: no
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+    enabled: "{{ item.enabled }}"
   loop:
-    - tuned.service
-    - vdo.service  
+    - {name: tuned.service, state: stopped, enabled: no}
+    - {name: vdo.service, state: stopped, enabled: no}
