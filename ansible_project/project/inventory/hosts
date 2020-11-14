@@ -30,6 +30,7 @@ ansible-test4 ansible_host=192.168.137.11
 #
 ##############################################################################
 
+# For Windows Server
 [BACKUP_SERVER:vars]
 ansible_user=Administrator
 ansible_password=Password0
