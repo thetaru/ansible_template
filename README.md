@@ -41,3 +41,7 @@ BECOME password: <ansible password>
 3. 追加したグループ名と同名のplaybookファイルをplaybooks下に作成する
 4. LinuxならLinux-Setting.sh, WindowsならWin-Setting.ps1を実行する
 ```
+# パスワード暗号化について
+http://jimaoka.hatenablog.jp/entry/ansible-vault
+```
+```
