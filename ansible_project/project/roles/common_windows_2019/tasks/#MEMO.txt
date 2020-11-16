@@ -21,3 +21,26 @@ windowsの設定 > sec > account > pass po
 - 
 
 ファイアウォール設定
+
+Bluetooth オーディオ ゲートウェイ サービス
+Bluetooth サポート サービス
+Distributed Link Tracking Client
+Print Spooler
+Remote Access Auto Connection Manager
+Remote Procedure Call (RPC) Locator
+Shell Hardware Detection
+Smart Card
+Special Administration Console Helper
+Telephony
+Windows Error Reporting Service
+Wired AutoConfig
+
+
+SNMPサービス設定
+コミュニティ名
+トラップ送信先
+セキュりてぃ-
+認証トラップを送信する off(場合によりけりだな)
+権利　読み書きとう
+
+電源プラン
