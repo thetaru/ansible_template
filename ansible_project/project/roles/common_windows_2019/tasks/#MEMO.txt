@@ -7,3 +7,17 @@ winupdate用のplaybook(taskか)を作る
    4. win_up サービス停止 -> 無効化
    5. (GPOの)レジストリでも無効化
 てな感じかな～
+
+パスワードポリシーのとこ
+windowsの設定 > sec > account > pass po
+
+ユーザアカウント制御：管理者承認モードですべての管理者を実行する ここどーなっている?
+
+インターフェイスの名前変更
+
+サーバの役割
+- SNMPサービス ON
+- Windows Defender OFF
+- 
+
+ファイアウォール設定
