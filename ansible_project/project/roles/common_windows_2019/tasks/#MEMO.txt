@@ -44,3 +44,13 @@ SNMPサービス設定
 権利　読み書きとう
 
 電源プラン
+
+$Adapters = (Get-NetAdapter).Name | sort
+
+foreach ($Adapter in $Adapters) {
+    ### ms_tcpip6を無効化
+    Set-NetAdapterBinding -Name "$Adapter" -ComponentID "ms_tcpip6" -Enable $false
+}
+
+### 一覧表示
+#(Get-NetAdapterBinding | Where-Object {$_.Name -eq "イーサネット" -And $_.ComponentID -eq "ms_tcpip6"}).Enabled
