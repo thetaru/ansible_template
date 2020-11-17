@@ -2,12 +2,12 @@
 - name: Disable IPv6
   script: ../scripts/disable_ipv6.ps1
   changed_when: False
-  when: IPv6 == disable
+  when: IPv6 == "disable"
 
 - name: Disable IPv6
   win_regedit:
     path: HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters
     name: DisabledComponents
-    data: FF
+    data: ff
     type: dword
-  when: IPv6 == disable
+  when: IPv6 == "disable"
