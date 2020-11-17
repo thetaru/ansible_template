@@ -45,6 +45,7 @@ SNMPサービス設定
 
 電源プラン
 
+### Interfaces IPv6無効化スクリプト一部
 $Adapters = (Get-NetAdapter).Name | sort
 
 foreach ($Adapter in $Adapters) {
