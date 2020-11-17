@@ -10,3 +10,4 @@
     name: DisabledComponents
     data: FF
     type: dword
+  when: IPv6 == disable
