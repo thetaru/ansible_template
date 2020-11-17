@@ -8,6 +8,6 @@
   win_regedit:
     path: HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters
     name: DisabledComponents
-    data: ff
+    data: 0xff
     type: dword
   when: IPv6 == "disable"
