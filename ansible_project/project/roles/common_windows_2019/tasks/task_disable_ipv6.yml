@@ -1,3 +1,4 @@
 ---
 - name: Disable IPv6
   script: ../scripts/disable_ipv6.ps1
+  when: IPv6 == disable
