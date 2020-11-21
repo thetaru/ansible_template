@@ -80,7 +80,7 @@ BECOME password: <ansible password>
 ```
 +  - import_playbook: ./playbooks/<GROUP_NAME>.yml
 ```
-### 4. シェルの実行
+### 5. シェルの実行
 #### Linuxの場合
 ```
 # sh Linux-Setting.sh
