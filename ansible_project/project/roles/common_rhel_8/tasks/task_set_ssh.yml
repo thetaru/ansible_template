@@ -1,0 +1,11 @@
+---
+- name: Deploy sshd_config template
+  template:
+    src: ../templates/sshd_config/sshd_config.j2
+    dest: /etc/ssh/sshd_config
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+  notify:
+    - restart sshd
