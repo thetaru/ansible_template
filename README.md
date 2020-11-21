@@ -93,7 +93,11 @@ BECOME password: <ansible password>
 ```
 </details>
 
+<details>
+ 
 ## ■ タスク追加時のヒント
+
+</details>
 
 <details>
 <summary>パスワード暗号化について</summary>
