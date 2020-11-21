@@ -1,7 +1,7 @@
 ---
 - name: Disable kernel update
   ini_file:
-    path_file: /etc/dnf/dnf.conf
+    path: /etc/dnf/dnf.conf
     state: present
     section: main
     no_extra_spaces: yes
