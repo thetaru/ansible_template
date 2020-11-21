@@ -36,6 +36,12 @@ Setting.shの`SSH_PASS`と`Ansible_PASS`はプロジェクトによって変更�
 BECOME password: <ansible password>
 ```
 ## ■ サーバ追加時のヒント
+### 1. hostsファイルを編集する
+```
+# vi inventory/hosts
+```
+```
+```
 ```
 1. inventory/hostsを編集する
 2. 追加したグループ名と同名のグループ変数ファイルをgroup_vars下に作成する
