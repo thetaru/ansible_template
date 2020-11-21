@@ -41,14 +41,41 @@ BECOME password: <ansible password>
 # vi inventory/hosts
 ```
 ```
-[GROUP_NAME]
-HOST_NAME ansible_host=<IP-ADDRESS>
++  [GROUP_NAME]
++  HOST_NAME ansible_host=<IP-ADDRESS>
+
+[OS_NAME]
++  HOST_NAME
+```
+### 2. 新規グループ変数を定義する
+テンプレートがある場合は以下のようにやるが、テンプレートがない場合は一から作ること。
+```
+# cp -p group_vars/_template_<OS_NAME>.yml group_vars/<GROUP_NAME>.yml
 ```
 ```
-1. inventory/hostsを編集する
-2. 追加したグループ名と同名のグループ変数ファイルをgroup_vars下に作成する
-3. 追加したグループ名と同名のplaybookファイルをplaybooks下に作成する
-4. (すでに右をテンプレート元で実行しているなら不要)LinuxならLinux-Setting.sh, WindowsならWin-Setting.ps1を実行する
+### 必要に応じて変数を変更する
+# vi group_vars/<GROUP_NAME>.yml
+```
+### 3. 新規Playbookを定義する
+```
+# vi playbooks/<GROUP_NAME>.yml
+```
+```
+---
+- hosts: <GROUP_NAME>
+  vars_files:
+    - ../group_vars/<GROUP_NAME>.yml
+  roles:
+    - role: <Role_Name>
+```
+### 4. シェルの実行
+#### Linuxの場合
+```
+# sh Linux-Setting.sh
+```
+#### Windowsの場合
+```
+> .\Windows-Setting.ps1
 ```
 ## ■ パスワード暗号化について
 このテンプレートではパスワードの暗号化を施していないので暗号化の方法を以下に記す。
