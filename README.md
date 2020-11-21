@@ -83,10 +83,12 @@ BECOME password: <ansible password>
 ### 5. シェルの実行
 #### Linuxの場合
 ```
+### ansibleサーバ上で実行
 # sh Linux-Setting.sh
 ```
 #### Windowsの場合
 ```
+### 対象Windowsサーバ上で実行
 > .\Windows-Setting.ps1
 ```
 </details>
