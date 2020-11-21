@@ -91,6 +91,9 @@ BECOME password: <ansible password>
 ```
 </details>
 
+<details>
+<summary>パスワード暗号化について</summary>
+
 ## ■ パスワード暗号化について
 このテンプレートではパスワードの暗号化を施していないので暗号化の方法を以下に記す。
 ### 事前確認
@@ -180,3 +183,5 @@ ansible_become_user=Administrator
 ansible_become_password="{{ ansible_password }}"
 ...
 ```
+
+</details>
