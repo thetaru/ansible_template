@@ -15,7 +15,8 @@
 ・冪等性問題めんどいのでなるべく(shell command win_shell win_command以外の)モジュールつかいたいところ
 ```
 # 必要そうな知識
-http://tdoc.info/blog/2014/05/30/ansible_target_switching.html
+http://tdoc.info/blog/2014/05/30/ansible_target_switching.html  
+https://qiita.com/c0tt0n-candy/items/83dfbb158f4520bba7e2
 ## ■ 外部モジュールのインストール
 ```
 # ansible-galaxy collection install ansible.windows
