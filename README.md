@@ -27,7 +27,7 @@ Linux_Setting.shを使う場合、`SSH_PASS`と`Ansible_PASS`はプロジェク�
 ```
 ### 管理対象サーバ上でSetting.shを実行
 ### 注) ansible実行ユーザ(Ansible_USER=ansible)を変える場合はansible.cfgのremote_userの値も変更すること
-# sh Setting.sh
+# sh Linux_Setting.sh
 ```
 ## ■ 実行方法
 ```
