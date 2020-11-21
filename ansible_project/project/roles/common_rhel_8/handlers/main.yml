@@ -3,3 +3,4 @@
 - import_tasks: ./handler_set_resolver.yml
 - import_tasks: ./handler_set_journald.yml
 - import_tasks: ./handler_set_coredump.yml
+- import_tasks: ./handler_set_ssh.yml
