@@ -11,3 +11,4 @@
 - import_tasks: ./task_disable_services.yml
 - import_tasks: ./task_set_OOM-Killer-behavior.yml
 - import_tasks: ./task_set_ssh.yml
+- import_tasks: ./task_disable_kernel-update.yml
