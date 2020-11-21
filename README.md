@@ -68,6 +68,14 @@ BECOME password: <ansible password>
   roles:
     - role: <Role_Name>
 ```
+### 4. 作成したPlaybookをインポート
+```
+### プロジェクト直下のmain.yml
+# vi main.yml
+```
+```
++  - import_playbook: ./playbooks/<GROUP_NAME>.yml
+```
 ### 4. シェルの実行
 #### Linuxの場合
 ```
