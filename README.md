@@ -35,6 +35,10 @@ Linux_Setting.shを使う場合、`SSH_PASS`と`Ansible_PASS`はプロジェク�
 ```
 BECOME password: <ansible password>
 ```
+
+<details>
+<summary>サーバ追加時のヒント</summary>
+ 
 ## ■ サーバ追加時のヒント
 ### 1. hostsファイルを編集する
 ```
@@ -85,6 +89,8 @@ BECOME password: <ansible password>
 ```
 > .\Windows-Setting.ps1
 ```
+</details>
+
 ## ■ パスワード暗号化について
 このテンプレートではパスワードの暗号化を施していないので暗号化の方法を以下に記す。
 ### 事前確認
