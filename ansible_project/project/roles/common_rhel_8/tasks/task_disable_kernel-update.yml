@@ -4,6 +4,7 @@
     path_file: /etc/dnf/dnf.conf
     state: present
     section: main
+    no_extra_spaces: yes
     option: excludepkgs
     value: kernel* centos* xorg*
     owner: root
